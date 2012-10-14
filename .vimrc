@@ -4,6 +4,8 @@ filetype off
 set rtp+=~/.vim/neobundle.vim.git
 " call vundle#rc()
 
+set laststatus=2
+
 if has('vim_starting')
   set runtimepath+=$HOME/.vim/neobundle.vim
   call neobundle#rc(expand('~/.bundle'))
@@ -27,7 +29,7 @@ filetype indent on
 
 let g:neocomplcache_enable_at_startup = 1
 " let g:vimproc_dll_path = $HOME+'/.bundle/vimproc/autoload/proc.so'
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 syntax enable
 set background=dark
@@ -48,8 +50,10 @@ set number " 行番号を表示
 "カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 
+set visualbell t_vb=
+
 "" カーソル行をハイライト
-" set cursorline
+set cursorline
 "" カレントウィンドウにのみ罫線を引く
 " augroup cch
 " autocmd! cch
@@ -60,11 +64,14 @@ set whichwrap=b,s,h,l,<,>,[,]
 " :hi CursorLine gui=underline
 " highlight CursorLine ctermbg=black guibg=black
 
+" ツールバーを削除
+set guioptions-=T
+
 if has('gui_macvim')
 	set guifont=Monaco:h14
 endif
 
-if has("gui_running")
-  set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
-endif
+"if has("gui_running")
+"  set fuoptions=maxvert,maxhorz
+"  au GUIEnter * set fullscreen
+"endif
