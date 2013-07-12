@@ -137,3 +137,13 @@ setopt auto_cd
 
 # C-s, C-qを無効にする。
 setopt no_flow_control
+
+# rehash しなくていいようにする
+function gem(){
+    $HOME/.rbenv/shims/gem $*
+    if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
+    then
+        rbenv rehash
+        rehash
+    fi
+}
