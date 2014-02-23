@@ -29,12 +29,12 @@ filetype indent on
 
 let g:neocomplcache_enable_at_startup = 1
 " let g:vimproc_dll_path = $HOME+'/.bundle/vimproc/autoload/proc.so'
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 
 syntax enable
 set background=dark
 
-colorscheme zenburn
+colorscheme molokai
 
 set modifiable
 
@@ -67,11 +67,3 @@ set cursorline
 " ツールバーを削除
 set guioptions-=T
 
-if has('gui_macvim')
-	set guifont=Monaco:h14
-endif
-
-"if has("gui_running")
-"  set fuoptions=maxvert,maxhorz
-"  au GUIEnter * set fullscreen
-"endif

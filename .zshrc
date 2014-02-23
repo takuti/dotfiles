@@ -1,18 +1,6 @@
 export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
-
-alias gvim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -g "$@"  --remote-tab-silent'
-alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim -g --remote-tab-silent"
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias psql='/usr/local/pgsql-9.1/bin/psql'
-
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-# alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-
-
 export LS_COLORS='di=01;36i'
 
 zstyle ':completio:n*' list-colors 'di=36' 'ln=35'
@@ -38,11 +26,15 @@ alias ls='ls -G'
 alias vi='vim'
 alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
 # プロンプトの設定 
 #PROMPT='%n# '
 #RPROMPT='[%~]'
 precmd () {
-  PROMPT=$'%{\e[0;33m%}%* ('$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')$') %%%{\e[m%} '
+  PROMPT=$'%{\e[0;33m%}%* %%%{\e[m%} '
 }
 RPROMPT=$'%{\e[32m%}[%~/]%{\e[m%}'
 
