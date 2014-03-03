@@ -1,69 +1,47 @@
+" ---------- appearance & setting
 set t_Co=256
-set nocompatible
-filetype off
-set rtp+=~/.vim/neobundle.vim.git
-" call vundle#rc()
 
-set laststatus=2
+autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
+autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
 
+syntax enable
+colorscheme molokai
+
+set laststatus=2                    " Show status line (for vim-powerline)
+set imdisable
+set antialias
+set tabstop=2                       " 1 tab = 2 spaces
+set shiftwidth=2                    " When automatic indent occured, shift 2 spaces.
+set number                          " appear row number
+set whichwrap=b,s,h,l,<,>,[,]       " don't stop cursor at head/tail of row
+set cursorline                      " cursor line highlight
+
+autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
+autocmd BufWritePre * :%s/\t/  /ge  " replace from tab to spaces (save-time)
+
+noremap ; :
+
+" ---------- plugin
 if has('vim_starting')
-  set runtimepath+=$HOME/.vim/neobundle.vim
-  call neobundle#rc(expand('~/.bundle'))
+  set nocompatible
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
 endif
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'sudo.vim'
+call neobundle#rc(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Align'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kchmck/vim-coffee-script'
 " NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'ujihisa/vimshell-ssh'
-NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'godlygeek/csapprox'
-NeoBundle	'project.tar.gz'
 NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'scrooloose/nerdtree'
-filetype on
-filetype plugin on
-filetype indent on
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/vimplenote-vim'
+filetype plugin indent on
 
 let g:neocomplcache_enable_at_startup = 1
 " let g:vimproc_dll_path = $HOME+'/.bundle/vimproc/autoload/proc.so'
 let g:Powerline_symbols = 'fancy'
 
-syntax enable
-set background=dark
-
-colorscheme molokai
-
-set modifiable
-
-set showtabline=2	" タブを常に表示
-set imdisable	" IMを無効化
-set antialias
-" タブを表示するときの幅
-set tabstop=2
-" タブを挿入するときの幅
-set shiftwidth=2
-set number " 行番号を表示
-		
-"カーソルを行頭、行末で止まらないようにする
-set whichwrap=b,s,h,l,<,>,[,]
-
-set visualbell t_vb=
-
-"" カーソル行をハイライト
-set cursorline
-"" カレントウィンドウにのみ罫線を引く
-" augroup cch
-" autocmd! cch
-" autocmd WinLeave * set nocursorline
-" autocmd WinEnter,BufRead * set cursorline
-" augroup END
-" :hi clear CursorLine
-" :hi CursorLine gui=underline
-" highlight CursorLine ctermbg=black guibg=black
-
-" ツールバーを削除
-set guioptions-=T
 
