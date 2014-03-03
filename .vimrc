@@ -1,12 +1,5 @@
 " ---------- appearance & setting
 set t_Co=256
-
-autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
-autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
-
-syntax enable
-colorscheme molokai
-
 set laststatus=2                    " Show status line (for vim-powerline)
 set imdisable
 set antialias
@@ -15,11 +8,19 @@ set shiftwidth=2                    " When automatic indent occured, shift 2 spa
 set number                          " appear row number
 set whichwrap=b,s,h,l,<,>,[,]       " don't stop cursor at head/tail of row
 set cursorline                      " cursor line highlight
+set vb t_vb=                        " delete beep sound
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 autocmd BufWritePre * :%s/\t/  /ge  " replace from tab to spaces (save-time)
 
 noremap ; :
+
+autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
+autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
+
+syntax enable
+colorscheme molokai
+
 
 " ---------- plugin
 if has('vim_starting')
