@@ -8,7 +8,7 @@ set shiftwidth=2                    " When automatic indent occured, shift 2 spa
 set number                          " appear row number
 set whichwrap=b,s,h,l,<,>,[,]       " don't stop cursor at head/tail of row
 set cursorline                      " cursor line highlight
-set vb t_vb=                        " delete beep sound
+set vb t_vb=                        " disable beep sound
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 autocmd BufWritePre * :%s/\t/  /ge  " replace from tab to spaces (save-time)
@@ -33,16 +33,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Align'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'ujihisa/vimshell-ssh'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/vimplenote-vim'
 filetype plugin indent on
 
 let g:neocomplcache_enable_at_startup = 1
-" let g:vimproc_dll_path = $HOME+'/.bundle/vimproc/autoload/proc.so'
 let g:Powerline_symbols = 'fancy'
-
-
