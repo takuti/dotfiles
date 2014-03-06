@@ -1,3 +1,22 @@
+" ---------- plugin
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
+endif
+call neobundle#rc(expand('~/.vim/bundle'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Align'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/vimplenote-vim'
+filetype plugin indent on
+
+let g:neocomplcache_enable_at_startup = 1
+let g:Powerline_symbols = 'fancy'
+
 " ---------- appearance & setting
 set t_Co=256
 set laststatus=2                    " Show status line (for vim-powerline)
@@ -20,23 +39,3 @@ autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
 
 syntax enable
 colorscheme molokai
-
-
-" ---------- plugin
-if has('vim_starting')
-  set nocompatible
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
-endif
-call neobundle#rc(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Align'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/vimplenote-vim'
-filetype plugin indent on
-
-let g:neocomplcache_enable_at_startup = 1
-let g:Powerline_symbols = 'fancy'
