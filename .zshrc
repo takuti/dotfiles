@@ -21,18 +21,13 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 function chpwd() { ls -v -F --color=auto }
 
 # エイリアスの設定
-alias ll='ls -ltr'
 alias ls='ls -G'
-alias vi='vim'
-alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
-# プロンプトの設定 
-#PROMPT='%n# '
-#RPROMPT='[%~]'
+# プロンプトの設定
 precmd () {
   PROMPT=$'%{\e[0;33m%}%* %%%{\e[m%} '
 }
@@ -56,7 +51,7 @@ autoload -Uz compinit; compinit
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 
 # cdのタイミングで自動的にpushd
-setopt auto_pushd 
+setopt auto_pushd
 
 # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 setopt append_history
