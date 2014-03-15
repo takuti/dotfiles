@@ -29,7 +29,7 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 
 # プロンプトの設定
 precmd () {
-  PROMPT=$'%{\e[0;33m%}(*\'-\') '
+  PROMPT=$'%{\e[0;33m%}(*\'-\')%{\e[m%} '
 }
 RPROMPT=$'%{\e[32m%}[%~/]%{\e[m%}'
 
