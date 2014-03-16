@@ -1,6 +1,3 @@
-export PATH=/opt/local/bin:/opt/local/sbin/:$PATH
-export MANPATH=/opt/local/man:$MANPATH
-
 export LS_COLORS='di=01;36i'
 
 zstyle ':completio:n*' list-colors 'di=36' 'ln=35'
@@ -10,11 +7,8 @@ zstyle ':completion:*:default' menu select=1
 export LANG=ja_JP.UTF-8
 
 # パスの設定
-PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-
-PATH=$PATH:/Developer/android-sdk-macosx/tools
-export PATH
 
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
