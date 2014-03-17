@@ -1,8 +1,3 @@
-export LS_COLORS='di=01;36i'
-
-zstyle ':completio:n*' list-colors 'di=36' 'ln=35'
-zstyle ':completion:*:default' menu select=1
-
 # 文字コードの設定
 export LANG=ja_JP.UTF-8
 
@@ -128,3 +123,6 @@ function gem(){
         rehash
     fi
 }
+
+# for Octave (not aqua)
+export GNUTERM=x11
