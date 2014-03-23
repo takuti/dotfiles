@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # パスの設定
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.rbenv/versions/2.0.0-p247/bin
+export PATH=/$HOME/.rbenv/versions/2.0.0-p247/bin:usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # 関数
