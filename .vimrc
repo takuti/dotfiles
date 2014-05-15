@@ -30,7 +30,12 @@ set cursorline                      " cursor line highlight
 set vb t_vb=                        " disable beep sound
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
-autocmd BufWritePre * :%s/\t/  /ge  " replace from tab to spaces (save-time)
+
+" replace from tab to spaces (save-time)
+" In case of Makefile, it should use exactly tab
+if @% != 'Makefile'
+  autocmd BufWritePre * :%s/\t/  /ge
+endif
 
 noremap ; :
 
