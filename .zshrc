@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # パスの設定
-export PATH=$HOME/.rbenv/versions/2.0.0-p247/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # 関数
