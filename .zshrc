@@ -2,7 +2,7 @@
 export LANG=ja_JP.UTF-8
 
 # パスの設定
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
+export PATH=/usr/local/Cellar/python/2.7.8_1/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # 関数
@@ -12,9 +12,9 @@ function chpwd() { ls -v -F --color=auto }
 # エイリアスの設定
 alias ls='ls -G'
 
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+# export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+# alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+# alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 # プロンプトの設定
 precmd () {
@@ -35,6 +35,9 @@ setopt extended_history
 LISTMAX=0
 
 autoload -Uz compinit; compinit
+
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
 
 # sudo でも補完の対象
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
