@@ -19,7 +19,7 @@ export EDITOR='vim'
 
 # プロンプトの設定
 precmd () {
-  PROMPT=$'%{\e[0;33m%}(*\'-\')%{\e[m%} '
+  PROMPT=$'%{\e[0;33m%}\[%*\] %{\xE2\x9E\xA1%} %{\e[m%} '
 }
 RPROMPT=$'%{\e[32m%}[%~/]%{\e[m%}'
 
