@@ -3,16 +3,18 @@ if has('vim_starting')
   set nocompatible
   set runtimepath+=$HOME/.vim/bundle/neobundle.vim
 endif
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Align'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'mattn/vimplenote-vim'
+NeoBundle 'thinca/vim-quickrun'
+
+call neobundle#end()
 filetype plugin indent on
+NeoBundleCheck
 
 let g:neocomplcache_enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
