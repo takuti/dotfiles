@@ -28,12 +28,12 @@ NeoBundleCheck
 let g:neocomplcache_enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
 let g:quickrun_config = {
-\   "_" : {
-\     "outputter/buffer/split" : ":botright 8sp",
-\     "outputter/buffer/close_on_empty" : 1,
-\     "hook/time/enable" : 1,
-\     "runner" : "vimproc",
-\     "runner/vimproc/updatetime" : 60
+\   '_' : {
+\     'outputter/buffer/split' : ':botright 8sp',
+\     'outputter/buffer/close_on_empty' : 1,
+\     'hook/time/enable' : 1,
+\     'runner' : 'vimproc',
+\     'runner/vimproc/updatetime' : 60
 \   },
 \ }
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
