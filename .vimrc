@@ -18,6 +18,13 @@ NeoBundleCheck
 
 let g:neocomplcache_enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
+let g:quickrun_config = {
+\   "_" : {
+\     "outputter/buffer/split" : ":botright 8sp",
+\     "outputter/buffer/close_on_empty" : 1,
+\     "hook/time/enable" : 1
+\   },
+\ }
 
 " ---------- appearance & setting
 set t_Co=256
