@@ -9,6 +9,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Align'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\   'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'thinca/vim-quickrun'
 
@@ -22,9 +31,12 @@ let g:quickrun_config = {
 \   "_" : {
 \     "outputter/buffer/split" : ":botright 8sp",
 \     "outputter/buffer/close_on_empty" : 1,
-\     "hook/time/enable" : 1
+\     "hook/time/enable" : 1,
+\     "runner" : "vimproc",
+\     "runner/vimproc/updatetime" : 60
 \   },
 \ }
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
 " ---------- appearance & setting
 set t_Co=256
