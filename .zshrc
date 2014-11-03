@@ -1,124 +1,95 @@
-# 文字コードの設定
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="my_theme"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export PATH="/usr/local/Cellar/python/2.7.8_1/bin:/Users/takuti/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 export LANG=ja_JP.UTF-8
 
-# パスの設定
-export PATH=/usr/local/Cellar/python/2.7.8_1/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
-export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-
-# 関数
-find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
-function chpwd() { ls -v -F --color=auto }
-
-# エイリアスの設定
-alias ls='ls -G'
-
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 export EDITOR='vim'
-# export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-# alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-# alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
-# プロンプトの設定
-precmd () {
-  PROMPT=$'%{\e[0;33m%}\[%*\] %{\xE2\x9E\xA1%} %{\e[m%} '
-}
-RPROMPT=$'%{\e[32m%}[%~/]%{\e[m%}'
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# ヒストリの設定
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-
-# 履歴ファイルに時刻を記録
-setopt extended_history
-
-# 補完するかの質問は画面を超える時にのみに行う｡
-LISTMAX=0
-
-autoload -Uz compinit; compinit
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
-# sudo でも補完の対象
-zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
-
-# cdのタイミングで自動的にpushd
-setopt auto_pushd
-
-# 複数の zsh を同時に使う時など history ファイルに上書きせず追加
-setopt append_history
-
-# 補完候補が複数ある時に、一覧表示
-setopt auto_list
-
-# 保管結果をできるだけ詰める
-setopt list_packed
-
-# 補完キー（Tab, Ctrl+I) を連打するだけで順に補完候補を自動で補完
-setopt auto_menu
-
-# カッコの対応などを自動的に補完
-setopt auto_param_keys
-
-# ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-setopt auto_param_slash
-
-# ビープ音を鳴らさないようにする
 setopt no_beep
 
-# 直前と同じコマンドラインはヒストリに追加しない
-setopt hist_ignore_dups
-
-# ヒストリにhistoryコマンドを記録しない
-setopt hist_no_store
-
-# 余分なスペースを削除してヒストリに記録する
-setopt hist_reduce_blanks
-
-# 行頭がスペースで始まるコマンドラインはヒストリに記録しない
-# setopt hist_ignore_spece
-
-# 重複したヒストリは追加しない
-# setopt hist_ignore_all_dups
-
-# ヒストリを呼び出してから実行する間に一旦編集できる状態になる
-setopt hist_verify
-
-# auto_list の補完候補一覧で、ls -F のようにファイルの種別をマーク表示しない
-setopt no_list_types
-
-# コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
-setopt magic_equal_subst
-
-# ファイル名の展開でディレクトリにマッチした場合末尾に / を付加する
-setopt mark_dirs
-
-# 8 ビット目を通すようになり、日本語のファイル名を表示可能
-setopt print_eight_bit
-
-# シェルのプロセスごとに履歴を共有
-setopt share_history
-
-# Ctrl+wで､直前の/までを削除する｡
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
-# ディレクトリを水色にする｡
-export LS_COLORS='di=01;36'
-
-# ファイルリスト補完でもlsと同様に色をつける｡
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# cd をしたときにlsを実行する
+# do `ls` when change directory
 function chpwd() { ls }
 
-# ディレクトリ名だけで､ディレクトリの移動をする｡
-setopt auto_cd
-
-# C-s, C-qを無効にする。
-setopt no_flow_control
-
-# rehash しなくていいようにする
+# no need to rehash
 function gem(){
     $HOME/.rbenv/shims/gem $*
     if [ "$1" = "install" ] || [ "$1" = "i" ] || [ "$1" = "uninstall" ] || [ "$1" = "uni" ]
