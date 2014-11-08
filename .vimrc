@@ -55,7 +55,7 @@ autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-
 
 " replace from tab to spaces (save-time)
 " In case of Makefile, it should use exactly tab
-if @% != 'Makefile'
+if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
   autocmd BufWritePre * :%s/\t/  /ge
 endif
 
