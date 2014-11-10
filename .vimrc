@@ -61,7 +61,7 @@ endif
 
 " replace from tab to spaces (save-time)
 " In case of Makefile, it should use exactly tab
-if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
+if expand('%:t') != 'Makefile'
   autocmd BufWritePre * :%s/\t/  /ge
 endif
 
