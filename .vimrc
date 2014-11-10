@@ -53,9 +53,11 @@ set spelllang=en,cjk
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 
-" Substitute Japanese punctuation
-autocmd BufWritePre * :%s/．/．/ge
-autocmd BufWritePre * :%s/，/，/ge
+" Substitute Japanese punctuations in Markdown files
+if expand('%:e') == 'md'
+  autocmd BufWritePre * :%s/。/．/ge
+  autocmd BufWritePre * :%s/、/，/ge
+endif
 
 " replace from tab to spaces (save-time)
 " In case of Makefile, it should use exactly tab
