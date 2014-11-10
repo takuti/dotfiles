@@ -53,6 +53,10 @@ set spelllang=en,cjk
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 
+" Substitute Japanese punctuation
+autocmd BufWritePre * :%s/．/．/ge
+autocmd BufWritePre * :%s/，/，/ge
+
 " replace from tab to spaces (save-time)
 " In case of Makefile, it should use exactly tab
 if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
