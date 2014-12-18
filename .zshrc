@@ -102,4 +102,4 @@ function gem(){
 # for Octave (not aqua)
 export GNUTERM=x11
 
-export PYTHONSTARTUP='.pythonrc'
+export PYTHONSTARTUP=$HOME/.pythonrc
