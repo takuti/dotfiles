@@ -1,6 +1,5 @@
 " ---------- plugin
 if has('vim_starting')
-  set nocompatible
   set runtimepath+=$HOME/.vim/bundle/neobundle.vim
 endif
 call neobundle#begin(expand('~/.vim/bundle/'))
