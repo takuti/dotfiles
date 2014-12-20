@@ -47,7 +47,7 @@ set shiftwidth=2                    " When automatic indent occured, shift 2 spa
 set number                          " appear row number
 set whichwrap=b,s,h,l,<,>,[,]       " don't stop cursor at head/tail of row
 set cursorline                      " cursor line highlight
-set vb t_vb=                        " disable beep sound
+set visualbell t_vb=                        " disable beep sound
 set spelllang=en,cjk
 
 autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
