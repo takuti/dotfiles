@@ -50,18 +50,21 @@ set cursorline                      " cursor line highlight
 set visualbell t_vb=                        " disable beep sound
 set spelllang=en,cjk
 
-autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
+augroup vimrc
+  autocmd!
+  autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 
-" replace from tab to spaces (save-time)
-" In case of Makefile, it should use exactly tab
-if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
-  autocmd BufWritePre * :%s/\t/  /ge
-endif
+  " replace from tab to spaces (save-time)
+  " In case of Makefile, it should use exactly tab
+  if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
+    autocmd BufWritePre * :%s/\t/  /ge
+  endif
+
+  autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
+  autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
+augroup END
 
 noremap ; :
-
-autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
-autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
 
 syntax enable
 colorscheme molokai
