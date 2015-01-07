@@ -65,6 +65,10 @@ augroup vimrc
 augroup END
 
 noremap ; :
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
 
 syntax enable
 colorscheme molokai
