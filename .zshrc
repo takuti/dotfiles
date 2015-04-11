@@ -103,3 +103,8 @@ function gem(){
 export GNUTERM=x11
 
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+# for Swarm simulator
+# http://www.iba.t.u-tokyo.ac.jp/software/Swarm_Software/Mac_install.html
+export SWARMHOME=/opt/local/
+export CLASSPATH=.:/opt/local/share/swarm/kawa.jar:/opt/local/share/swarm/swarm.jar
