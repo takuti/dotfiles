@@ -84,6 +84,8 @@ export EDITOR='vim'
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
+alias macdown='open -a /Applications/MacDown.app'
+
 setopt no_beep
 
 # do `ls` when change directory
