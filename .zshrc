@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/Cellar:/usr/local/Cellar/python/2.7.8_1/bin:/Users/takuti/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin"
+export PATH="/usr/local/Cellar:/usr/local/share/python:/Users/takuti/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin"
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # You may need to manually set your language environment
