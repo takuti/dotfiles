@@ -49,6 +49,7 @@ set whichwrap=b,s,h,l,<,>,[,]       " don't stop cursor at head/tail of row
 set cursorline                      " cursor line highlight
 set visualbell t_vb=                        " disable beep sound
 set spelllang=en,cjk
+set clipboard+=unnamed
 
 augroup vimrc
   autocmd!
