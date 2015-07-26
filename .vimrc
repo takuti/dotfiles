@@ -50,6 +50,7 @@ set cursorline                      " cursor line highlight
 set visualbell t_vb=                " disable beep sound
 set spelllang=en,cjk
 set clipboard+=unnamed
+set backspace=indent,eol,start
 
 augroup vimrc
   autocmd!
