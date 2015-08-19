@@ -110,4 +110,4 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 
 
 # added by travis gem
-[ -f /Users/takuti/.travis/travis.sh ] && source /Users/takuti/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
