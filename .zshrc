@@ -85,7 +85,6 @@ export EDITOR='vim'
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
-alias macdown='open -a /Applications/MacDown.app'
 alias brew="env PATH=${PATH/\/Users\/takuti\/\.rbenv\/shims:/} brew"
 
 setopt no_beep
