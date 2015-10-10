@@ -56,6 +56,9 @@ set visualbell t_vb=                " disable beep sound
 set spelllang=en,cjk
 set clipboard+=unnamed
 set backspace=indent,eol,start
+set wildmenu
+set incsearch
+set hlsearch
 
 augroup vimrc
   autocmd!
