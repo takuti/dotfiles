@@ -24,6 +24,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'rust-lang/rust.vim'
 
 call neobundle#end()
 filetype plugin indent on
