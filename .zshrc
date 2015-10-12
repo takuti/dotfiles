@@ -51,7 +51,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/Cellar:/usr/local/share/python:/Users/takuti/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin"
+export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # You may need to manually set your language environment
@@ -85,12 +87,13 @@ export EDITOR='vim'
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
-alias brew="env PATH=${PATH/\/Users\/takuti\/\.rbenv\/shims:/} brew"
-
 setopt no_beep
 
 # do `ls` when change directory
 function chpwd() { ls }
+
+# to enable shims and autocompletion add to your profile
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # no need to rehash
 function gem(){
