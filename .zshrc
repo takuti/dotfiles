@@ -116,3 +116,6 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+eval "$(direnv hook zsh)"
+
