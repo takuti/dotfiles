@@ -87,9 +87,6 @@ export EDITOR='vim'
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
-alias python='python3'
-alias pip='pip3'
-
 setopt no_beep
 
 # do `ls` when change directory
