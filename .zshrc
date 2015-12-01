@@ -128,3 +128,5 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
