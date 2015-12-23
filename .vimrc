@@ -25,6 +25,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -42,6 +45,10 @@ let g:quickrun_config = {
 \   },
 \ }
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+augroup PrevimSettings
+  autocmd!
+  autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
 
 " ---------- appearance & setting
 set t_Co=256
