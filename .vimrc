@@ -70,11 +70,12 @@ set hlsearch
 
 augroup vimrc
   autocmd!
-  autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
 
   " replace from tab to spaces (save-time)
   " In case of Makefile, it should use exactly tab
-  if expand('%:t') != 'Makefile' && expand('%:e') != 'md'
+  let filename = expand('%:t')
+  if filename != 'Makefile' && filename != 'addp-hunk-edit.diff' && expand('%:e') != 'md'
+    autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
     autocmd BufWritePre * :%s/\t/  /ge
   endif
 
