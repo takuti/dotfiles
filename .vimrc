@@ -80,6 +80,10 @@ augroup vimrc
 
   autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
   autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
+
+  " enable spell checker only for document files
+  autocmd BufNewFile,BufRead *.tex set spell
+  autocmd BufNewFile,BufRead *.md set spell
 augroup END
 
 noremap ; :
