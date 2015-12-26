@@ -72,12 +72,10 @@ augroup vimrc
   autocmd!
 
   " replace from tab to spaces (save-time)
-  " In case of Makefile, it should use exactly tab
-  let filename = expand('%:t')
-  if filename != 'Makefile' && filename != 'addp-hunk-edit.diff' && expand('%:e') != 'md'
-    autocmd BufWritePre * :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
-    autocmd BufWritePre * :%s/\t/  /ge
-  endif
+  " In case of Makefile or markdown, it should use exactly tab
+  let blacklist = ['make', '*.md', 'addp-hunk-edit.diff']
+  autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
+  autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\t/  /ge
 
   autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
   autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
