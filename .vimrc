@@ -1,12 +1,14 @@
 " ---------- plugin
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
+if 0 | endif
 
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim
+if &compatible
+ set nocompatible
 endif
+
+set runtimepath^=~/.vim/bundle/neobundle.vim/
+
 call neobundle#begin(expand('~/.vim/bundle/'))
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tomasr/molokai'
