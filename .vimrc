@@ -30,6 +30,8 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'andviro/flake8-vim'
 
 call neobundle#end()
 filetype plugin indent on
