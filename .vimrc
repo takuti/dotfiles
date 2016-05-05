@@ -5,37 +5,32 @@ if &compatible
  set nocompatible
 endif
 
-set runtimepath^=~/.vim/bundle/neobundle.vim/
+set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call dein#begin(expand('~/.cache/dein'))
+call dein#add('Shougo/dein.vim')
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#add('tomasr/molokai')
+call dein#add('Align')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Lokaltog/vim-powerline')
+call dein#add('thinca/vim-quickrun')
+call dein#add('rust-lang/rust.vim')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kannokanno/previm')
+call dein#add('tyru/open-browser.vim')
+call dein#add('davidhalter/jedi-vim')
+call dein#add('andviro/flake8-vim')
 
-NeoBundle 'tomasr/molokai'
-NeoBundle 'Align'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\   'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'andviro/flake8-vim'
+call dein#end()
 
-call neobundle#end()
 filetype plugin indent on
-NeoBundleCheck
+
+if dein#check_install()
+  call dein#install()
+endif
 
 let g:neocomplcache_enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
