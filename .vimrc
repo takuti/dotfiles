@@ -12,7 +12,7 @@ call dein#add('Shougo/dein.vim')
 
 call dein#add('tomasr/molokai')
 call dein#add('Align')
-call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Lokaltog/vim-powerline')
@@ -32,7 +32,7 @@ if dein#check_install()
   call dein#install()
 endif
 
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 1
 let g:Powerline_symbols = 'fancy'
 let g:quickrun_config = {
 \   '_' : {
