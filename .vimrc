@@ -15,7 +15,7 @@ call dein#add('Align')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('Lokaltog/vim-powerline')
+call dein#add('itchyny/lightline.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('rust-lang/rust.vim')
 call dein#add('plasticboy/vim-markdown')
@@ -33,7 +33,9 @@ if dein#check_install()
 endif
 
 let g:neocomplete#enable_at_startup = 1
-let g:Powerline_symbols = 'fancy'
+let g:lightline = {
+\ 'colorscheme': 'wombat',
+\ }
 let g:quickrun_config = {
 \   '_' : {
 \     'outputter/buffer/split' : ':botright 8sp',
