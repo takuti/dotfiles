@@ -11,13 +11,13 @@ call dein#begin(expand('~/.cache/dein'))
 call dein#add('Shougo/dein.vim')
 
 call dein#add('tomasr/molokai')
-call dein#add('Align')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('itchyny/lightline.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('rust-lang/rust.vim')
+call dein#add('godlygeek/tabular')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
@@ -46,6 +46,9 @@ let g:quickrun_config = {
 \   },
 \ }
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+let g:vim_markdown_folding_disabled = 1
+
 augroup PrevimSettings
   autocmd!
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -122,9 +125,9 @@ augroup vimrc
 
   " replace from tab to spaces (save-time)
   " In case of Makefile or markdown, it should use exactly tab
-  let blacklist = ['make', '*.md', 'addp-hunk-edit.diff']
-  autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
-  autocmd BufWritePre * if index(blacklist, &ft) < 0 | :%s/\t/  /ge
+  let whitespace_blacklist = ['make', 'markdown', 'addp-hunk-edit.diff']
+  autocmd BufWritePre * if index(whitespace_blacklist, &ft) < 0 | :%s/\s\+$//ge " delete extra spaces at tail of rows (save-time)
+  autocmd BufWritePre * if index(whitespace_blacklist, &ft) < 0 | :%s/\t/  /ge
 
   autocmd ColorScheme * hi Normal ctermfg=grey ctermbg=black
   autocmd ColorScheme * hi CursorLine cterm=underline ctermfg=none ctermbg=none
