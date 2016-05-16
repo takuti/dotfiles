@@ -67,6 +67,7 @@ export LC_ALL=ja_JP.UTF-8
 # else
 #   export EDITOR='mvim'
 # fi
+alias vim='nvim'
 export EDITOR='vim'
 
 # Compilation flags
