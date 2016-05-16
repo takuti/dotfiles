@@ -68,6 +68,7 @@ export LC_ALL=en_US.utf8
 #   export EDITOR='mvim'
 # fi
 alias vim='nvim'
+export XDG_CONFIG_HOME=~/.config
 export EDITOR='vim'
 
 # Compilation flags
