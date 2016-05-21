@@ -156,5 +156,35 @@ nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up> gk
 
+" ruin the arrow keys and backspace
+function TeachKey(message)
+  echo join(['Press [', a:message, '] key!'])
+endfun
+nnoremap <buffer> <Left> <Esc>:call TeachKey('h')<CR>
+nnoremap <buffer> <Right> <Esc>:call TeachKey('l')<CR>
+nnoremap <buffer> <Up> <Esc>:call TeachKey('k')<CR>
+nnoremap <buffer> <Down> <Esc>:call TeachKey('j')<CR>
+nnoremap <buffer> <PageUp> <Esc>:call TeachKey('Ctrl+B')<CR>
+nnoremap <buffer> <PageDown> <Esc>:call TeachKey('Ctrl+F')<CR>
+inoremap <buffer> <Left> <Esc>:call TeachKey('h')<CR>
+inoremap <buffer> <Right> <Esc>:call TeachKey('l')<CR>
+inoremap <buffer> <Up> <Esc>:call TeachKey('k')<CR>
+inoremap <buffer> <Down> <Esc>:call TeachKey('j')<CR>
+inoremap <buffer> <PageUp> <Esc>:call TeachKey('Ctrl+B')<CR>
+inoremap <buffer> <PageDown> <Esc>:call TeachKey('Ctrl+F')<CR>
+vnoremap <buffer> <Left> <Esc>:call TeachKey('h')<CR>
+vnoremap <buffer> <Right> <Esc>:call TeachKey('l')<CR>
+vnoremap <buffer> <Up> <Esc>:call TeachKey('k')<CR>
+vnoremap <buffer> <Down> <Esc>:call TeachKey('j')<CR>
+vnoremap <buffer> <PageUp> <Esc>:call TeachKey('Ctrl+B')<CR>
+vnoremap <buffer> <PageDown> <Esc>:call TeachKey('Ctrl+F')<CR>
+
+nnoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
+inoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
+vnoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
+nnoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
+inoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
+vnoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
+
 syntax enable
 colorscheme molokai
