@@ -132,6 +132,7 @@ set backspace=indent,eol,start
 set wildmenu
 set incsearch
 set hlsearch
+set mouse=
 
 augroup vimrc
   autocmd!
