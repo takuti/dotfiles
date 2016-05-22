@@ -153,8 +153,6 @@ augroup END
 noremap ; :
 nnoremap j gj
 nnoremap k gk
-nnoremap <Down> gj
-nnoremap <Up> gk
 
 " ruin the arrow keys and backspace
 function TeachKey(message)
@@ -178,13 +176,6 @@ vnoremap <buffer> <Up> <Esc>:call TeachKey('k')<CR>
 vnoremap <buffer> <Down> <Esc>:call TeachKey('j')<CR>
 vnoremap <buffer> <PageUp> <Esc>:call TeachKey('Ctrl+B')<CR>
 vnoremap <buffer> <PageDown> <Esc>:call TeachKey('Ctrl+F')<CR>
-
-nnoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
-inoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
-vnoremap <buffer> <BS> <Esc>:call TeachKey('Ctrl+H')<CR>
-nnoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
-inoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
-vnoremap <buffer> <Del> <Esc>:call TeachKey('Ctrl+H')<CR>
 
 syntax enable
 colorscheme molokai
