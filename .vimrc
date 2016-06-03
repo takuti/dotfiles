@@ -24,6 +24,7 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('tyru/open-browser.vim')
 call dein#add('andviro/flake8-vim')
+call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 
