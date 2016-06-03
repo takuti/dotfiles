@@ -155,6 +155,13 @@ noremap ; :
 nnoremap j gj
 nnoremap k gk
 
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+
 " ruin the arrow keys and backspace
 function TeachKey(message)
   echo join(['Press [', a:message, '] key!'])
