@@ -19,6 +19,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('thinca/vim-quickrun')
 call dein#add('rust-lang/rust.vim')
+call dein#add('JuliaLang/julia-vim')
 call dein#add('godlygeek/tabular')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
@@ -150,6 +151,8 @@ augroup vimrc
   " enable spell checker only for document files
   autocmd BufNewFile,BufRead *.tex set spell
   autocmd BufNewFile,BufRead *.md set spell
+
+  autocmd Filetype julia setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
 
 noremap ; :
