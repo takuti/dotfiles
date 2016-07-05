@@ -18,14 +18,17 @@ call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('thinca/vim-quickrun')
+call dein#add('godlygeek/tabular')
+call dein#add('tyru/open-browser.vim')
+call dein#add('tpope/vim-fugitive')
+
+" language specific
 call dein#add('rust-lang/rust.vim')
 call dein#add('JuliaLang/julia-vim')
-call dein#add('godlygeek/tabular')
+call dein#add('derekwyatt/vim-scala')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
-call dein#add('tyru/open-browser.vim')
 call dein#add('andviro/flake8-vim')
-call dein#add('tpope/vim-fugitive')
 
 call dein#end()
 
