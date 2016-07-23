@@ -112,8 +112,10 @@ function gem(){
 # for Octave (not aqua)
 export GNUTERM=x11
 
+# python
 export PYTHONSTARTUP=$HOME/.pythonrc
-
+alias python='python3'
+alias pip='pip3'
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
