@@ -1,1 +1,1 @@
-## takuti's dot-files
+https://github.com/takuti/mac-provisioning
