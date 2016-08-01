@@ -86,7 +86,7 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias ls='ls -GF --color'
+alias ls='ls -GF'
 
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
