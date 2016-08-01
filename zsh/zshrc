@@ -117,7 +117,7 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 alias python='python3'
 alias pip='pip3'
 
-export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/.pyenv/sims:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # added by travis gem
