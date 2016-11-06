@@ -88,6 +88,8 @@ export EDITOR='vim'
 #
 alias ls='ls -GF'
 
+export LESS='-M -R -S -W -z-4 -x4'
+
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
