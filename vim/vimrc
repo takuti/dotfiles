@@ -19,6 +19,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('godlygeek/tabular')
 call dein#add('tyru/open-browser.vim')
+call dein#add('kmnk/vim-unite-giti')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-fugitive')
 
@@ -162,6 +163,17 @@ augroup END
 noremap ; :
 nnoremap j gj
 nnoremap k gk
+
+let mapleader = ' '
+
+" unite.vim
+nnoremap [Unite] <Nop>
+nmap <Leader>u [Unite]
+nnoremap <silent> [Unite]re :<C-u>UniteResume<CR>
+nnoremap <silent> [Unite]f  :<C-u>Unite -buffer-name=Files file_rec/async:!<CR>
+nnoremap <silent> [Unite]s  :<C-u>Unite -buffer-name=Sources source<CR>
+nnoremap <silent> [Unite]g  :<C-u>Unite grep -buffer-name=Search<CR>
+nnoremap <silent> [Unite]gi :<C-u>Unite -buffer-name=Giti giti<CR>
 
 " ruin the arrow keys and backspace
 function TeachKey(message)
