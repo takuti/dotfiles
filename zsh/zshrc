@@ -52,7 +52,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
-export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
@@ -98,6 +97,15 @@ setopt no_beep
 # do `ls` when change directory
 function chpwd() { ls }
 
+case ${OSTYPE} in
+  darwin*)
+    # Mac specific (mainly for homebrew)
+    export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+    eval "$(direnv hook zsh)"
+    export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+    ;;
+esac
+
 # to enable shims and autocompletion add to your profile
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -123,8 +131,6 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
-eval "$(direnv hook zsh)"
-
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
 function peco-src () {
@@ -137,5 +143,3 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
