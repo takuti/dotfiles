@@ -5,7 +5,7 @@ if &compatible
  set nocompatible
 endif
 
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 call dein#begin(expand('~/.cache/dein'))
 call dein#add('Shougo/dein.vim')
@@ -132,7 +132,7 @@ nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
 
 " deoplete.vim requires python3
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = expand('$HOME') . '/.pyenv/shims/python'
 let g:deoplete#enable_at_startup = 1
 
 " ---------- appearance & setting
