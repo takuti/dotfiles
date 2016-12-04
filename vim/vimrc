@@ -15,6 +15,7 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Shougo/vimshell.vim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('thinca/vim-quickrun')
 call dein#add('godlygeek/tabular')
@@ -121,6 +122,8 @@ augroup PrevimSettings
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+let mapleader = ' '
+
 " memolist.vim
 let g:memolist_path = '~/Dropbox/memo'
 let g:memolist_memo_suffix = 'md'
@@ -130,6 +133,9 @@ let g:memolist_unite_option = "-start-insert"
 nnoremap <Leader>mn  :MemoNew<CR>
 nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
+
+nnoremap <Leader>vs  :VimShell<CR>
+nnoremap <Leader>vsp :VimShellPop<CR>
 
 " deoplete.vim requires python3
 let g:python3_host_prog = expand('$HOME') . '/.pyenv/shims/python'
@@ -175,8 +181,6 @@ augroup END
 noremap ; :
 nnoremap j gj
 nnoremap k gk
-
-let mapleader = ' '
 
 " unite.vim
 nnoremap [Unite] <Nop>
