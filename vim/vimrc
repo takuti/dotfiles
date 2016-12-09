@@ -32,7 +32,7 @@ call dein#add('JuliaLang/julia-vim')
 call dein#add('derekwyatt/vim-scala')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
-call dein#add('nvie/vim-flake8')
+call dein#add('andviro/flake8-vim')
 
 call dein#end()
 
@@ -177,8 +177,6 @@ augroup vimrc
 
   autocmd Filetype julia setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-  " Run the Flake8 check every time wrote a Python file
-  autocmd BufWritePost *.py call Flake8()
 augroup END
 
 noremap ; :
