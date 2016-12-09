@@ -67,6 +67,7 @@ export LC_ALL=en_US.UTF-8
 #   export EDITOR='mvim'
 # fi
 alias vim='nvim'
+alias python2='python'
 export XDG_CONFIG_HOME=~/.config
 export EDITOR='vim'
 
