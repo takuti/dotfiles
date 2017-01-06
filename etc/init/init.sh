@@ -16,7 +16,6 @@ mkdir "$DOTPATH"/tmp
 for i in "$DOTPATH"/etc/init/"$PLATFORM"/*.sh
 do
     if [ -f "$i" ]; then
-        log_info "$(e_arrow "$(basename "$i")")"
         if [ "${DEBUG:-}" != 1 ]; then
             bash "$i"
         fi
@@ -28,7 +27,6 @@ done
 for i in "$DOTPATH"/etc/init/common/*.sh
 do
     if [ -f "$i" ]; then
-        log_info "$(e_arrow "$(basename "$i")")"
         if [ "${DEBUG:-}" != 1 ]; then
             bash "$i"
         fi
