@@ -13,7 +13,7 @@ sudo -v
 
 mkdir "$DOTPATH"/tmp
 
-for i in "$DOTPATH"/etc/init/"$PLATFORM"/*.sh
+for i in "$DOTPATH"/init/scripts/"$PLATFORM"/*.sh
 do
     if [ -f "$i" ]; then
         if [ "${DEBUG:-}" != 1 ]; then
@@ -24,7 +24,7 @@ do
     fi
 done
 
-for i in "$DOTPATH"/etc/init/common/*.sh
+for i in "$DOTPATH"/init/scripts/common/*.sh
 do
     if [ -f "$i" ]; then
         if [ "${DEBUG:-}" != 1 ]; then
