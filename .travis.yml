@@ -8,3 +8,6 @@ sudo: required
 
 script:
   - make install
+
+notifications:
+  email: false
