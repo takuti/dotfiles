@@ -7,7 +7,7 @@ os:
 sudo: required
 
 script:
-  - make test
+  - make install
 
 notifications:
   email: false

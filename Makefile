@@ -5,8 +5,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .DEFAULT_GOAL := help
 
-all: update install init link  ## Run make update, install, init, link
-	@exec $$SHELL
+all: 
 
 update: ## Fetch changes for this repo
 	git pull origin master
@@ -24,10 +23,7 @@ clean: ## Remove the dot files and this repo
 init: ## Setup minimum environment
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/init/init.sh
 
-install: ## Install applications
-	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/install/install.sh
-
-test: init link ## Run make link, init
+install: update init link  ## Run make update, init, link
 	@exec $$SHELL
 
 help: ## Self-documented Makefile
