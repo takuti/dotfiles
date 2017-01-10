@@ -5,7 +5,7 @@ DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 
 .DEFAULT_GOAL := help
 
-all: update link init install ## Run make update, link, init, install
+all: update install init link  ## Run make update, install, init, link
 	@exec $$SHELL
 
 update: ## Fetch changes for this repo
@@ -27,7 +27,7 @@ init: ## Setup minimum environment
 install: ## Install applications
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/install/install.sh
 
-test: link init ## Run make link, init
+test: init link ## Run make link, init
 	@exec $$SHELL
 
 help: ## Self-documented Makefile
