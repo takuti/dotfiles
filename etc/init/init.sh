@@ -1,12 +1,16 @@
 #!/bin/bash
 
 if [ "$(uname)" == 'Darwin' ]; then
-  PLATFORM='mac'
+  PLATFORM='mac'; export PLATFORM
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  PLATFORM='linux'
+  PLATFORM='linux'; export PLATFORM
 else
   echo "Your platform ($(uname -a)) is not supported."
   exit 1
+fi
+
+if [ -z "${DOTPATH:-}" ]; then
+  DOTPATH=~/dotfiles; export DOTPATH
 fi
 
 sudo -v
