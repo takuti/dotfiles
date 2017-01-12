@@ -12,7 +12,6 @@ update: ## Fetch changes for this repo
 
 list: ## Show dot files in this repo
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
-	@echo $$DOTPATH
 
 link: ## Create symlink to home directory
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
