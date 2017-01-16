@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo brew install zsh
+brew install zsh
