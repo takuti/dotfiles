@@ -1,23 +1,15 @@
 #!/bin/bash
 
 if [ "$(uname)" == 'Darwin' ]; then
-  PLATFORM='mac'; export PLATFORM
-  brew install zsh
+  PLATFORM='mac'
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  PLATFORM='linux'; export PLATFORM
-  YUM_CMD=$(which yum)
-  APT_GET_CMD=$(which apt-get)
-  if [[ ! -z $YUM_CMD ]]; then
-    sudo yum install zsh
-  elif [[ ! -z $APT_GET_CMD ]]; then
-    sudo apt-get zsh
-  else
-    echo "WARNING: zsh was not able to be installed."
-  fi
+  PLATFORM='linux'
 else
   echo "Your platform ($(uname -a)) is not supported."
   exit 1
 fi
+
+export PLATFORM
 
 if [ -z "${DOTPATH:-}" ]; then
   DOTPATH=~/dotfiles; export DOTPATH
