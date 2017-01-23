@@ -20,7 +20,7 @@ clean: ## Remove the dot files and this repo
 	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
 
 init: ## Setup minimum environment
-	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/scripts/init.sh
 
 install: update init link  ## Run make update, init, link
 	@exec $$SHELL
