@@ -19,5 +19,3 @@ ln -sfnv "$DOTPATH"/assets/zsh/my_theme.zsh-theme "$HOME"/.oh-my-zsh/custom/them
 if ! grep -q /bin/zsh /etc/shells; then
   echo "/bin/zsh" | sudo tee -a /etc/shells
 fi
-sudo chsh -s /bin/zsh
-source ~/.zshrc
