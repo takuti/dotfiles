@@ -12,7 +12,7 @@ fi
 export PLATFORM
 
 if [ -z "${DOTPATH:-}" ]; then
-  DOTPATH=~/dotfiles; export DOTPATH
+  DOTPATH=$(pwd -P); export DOTPATH
 fi
 
 sudo -v
