@@ -17,9 +17,5 @@ fi
 
 sudo -v
 
-mkdir "$DOTPATH"/tmp
-
 bash "$DOTPATH"/scripts/zsh.sh
 bash "$DOTPATH"/scripts/vim.sh
-
-rm -rf "$DOTPATH"/tmp
