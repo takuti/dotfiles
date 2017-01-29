@@ -24,8 +24,6 @@ call dein#add('kmnk/vim-unite-giti')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-fugitive')
 
-call dein#add('glidenote/memolist.vim')
-
 " language specific
 call dein#add('rust-lang/rust.vim')
 call dein#add('JuliaLang/julia-vim')
@@ -123,16 +121,6 @@ augroup PrevimSettings
 augroup END
 
 let mapleader = ' '
-
-" memolist.vim
-let g:memolist_path = '~/Dropbox/memo'
-let g:memolist_memo_suffix = 'md'
-let g:memolist_unite = 1
-let g:memolist_unite_source = "file_rec"
-let g:memolist_unite_option = "-start-insert"
-nnoremap <Leader>mn  :MemoNew<CR>
-nnoremap <Leader>ml  :MemoList<CR>
-nnoremap <Leader>mg  :MemoGrep<CR>
 
 nnoremap <Leader>vs  :VimShell<CR>
 nnoremap <Leader>vsp :VimShellPop<CR>
