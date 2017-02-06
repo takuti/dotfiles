@@ -121,6 +121,8 @@ augroup PrevimSettings
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 
+autocmd BufNewFile,BufRead *.dig set filetype=yaml
+
 let mapleader = ' '
 
 nnoremap <Leader>vs  :VimShell<CR>
