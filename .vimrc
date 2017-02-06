@@ -10,7 +10,7 @@ set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin(expand('~/.cache/dein'))
 call dein#add('Shougo/dein.vim')
 
-call dein#add('tomasr/molokai')
+call dein#add('tomasr/molokai', {'merged': 0})
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-jedi')
 call dein#add('Shougo/unite.vim')
@@ -33,6 +33,7 @@ call dein#add('kannokanno/previm')
 call dein#add('andviro/flake8-vim')
 
 call dein#end()
+colorscheme molokai
 
 filetype plugin indent on
 
@@ -209,4 +210,3 @@ vnoremap <buffer> <PageUp> <Esc>:call TeachKey('Ctrl+B')<CR>
 vnoremap <buffer> <PageDown> <Esc>:call TeachKey('Ctrl+F')<CR>
 
 syntax enable
-colorscheme molokai
