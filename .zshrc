@@ -53,6 +53,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
 
+# maven
+export PATH=/opt/apache-maven-3.3.9/bin:$PATH
+
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # You may need to manually set your language environment
