@@ -2,3 +2,4 @@
 .DS_Store
 .envrc
 .ipynb_checkpoints
+__pycache__/
