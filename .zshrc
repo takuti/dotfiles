@@ -113,6 +113,9 @@ case ${OSTYPE} in
     alias hstart=${HADOOP_DIR}/sbin/start-all.sh
     alias hstop=${HADOOP_DIR}/sbin/stop-all.sh
 
+    # for Octave (not aqua)
+    export GNUTERM=x11
+
     ;;
 esac
 
@@ -128,9 +131,6 @@ function gem(){
         rehash
     fi
 }
-
-# for Octave (not aqua)
-export GNUTERM=x11
 
 # python
 export PYTHONSTARTUP=$HOME/.pythonrc
