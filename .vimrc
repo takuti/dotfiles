@@ -171,6 +171,7 @@ augroup vimrc
 augroup END
 
 noremap ; :
+noremap : ;
 nnoremap j gj
 nnoremap k gk
 
