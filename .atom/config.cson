@@ -3,9 +3,9 @@
     audioBeep: false
     disabledPackages: [
       "wrap-guide"
-      "ex-mode"
-      "vim-mode"
       "whitespace"
+      "wordcount"
+      "language-gfm"
     ]
     telemetryConsent: "no"
     themes: [
@@ -25,6 +25,7 @@
     userId: "1aca6eca-0802-b5a6-e021-46265ce481f3"
   "japanese-wrap":
     characterWidth: {}
+  "language-markdown": {}
   metrics:
     userId: "124e1c30e94c4e8550ccb146ac3c8758e6cc9529"
   "spell-check":
@@ -38,3 +39,6 @@
     showOnStartup: false
   wordcount:
     alwaysOn: true
+".md.text":
+  editor:
+    autoIndent: true
