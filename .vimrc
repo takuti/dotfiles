@@ -149,6 +149,8 @@ set wildmenu
 set incsearch
 set hlsearch
 set mouse=
+set ttimeout
+set ttimeoutlen=50
 
 augroup vimrc
   autocmd!
