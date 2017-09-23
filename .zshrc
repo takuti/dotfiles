@@ -22,6 +22,9 @@ export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/
 # maven
 export PATH=/opt/apache-maven-3.3.9/bin:$PATH
 
+# embulk, digdag
+export PATH="$HOME/.embulk/bin:$HOME/bin:$PATH"
+
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # You may need to manually set your language environment
