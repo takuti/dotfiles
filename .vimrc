@@ -31,6 +31,7 @@ call dein#add('derekwyatt/vim-scala')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('kannokanno/previm')
 call dein#add('andviro/flake8-vim')
+call dein#add('fatih/vim-go')
 
 call dein#end()
 colorscheme molokai
