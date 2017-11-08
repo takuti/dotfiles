@@ -171,6 +171,8 @@ augroup vimrc
 
   autocmd Filetype julia setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+  autocmd QuickFixCmdPost *grep* cwindow
+
 augroup END
 
 noremap ; :
