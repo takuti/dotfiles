@@ -7,7 +7,7 @@ os:
 dist: trusty
 
 install:
-  - make install
+  - sudo make install
 
 notifications:
   email: false
