@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2013/bin/universal-darwin
+export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2017/bin/x86_64-darwin
 
 # maven
 export PATH=/opt/apache-maven-3.3.9/bin:$PATH
