@@ -40,7 +40,7 @@ export LC_ALL=en_US.UTF-8
 # fi
 alias vim='nvim'
 export XDG_CONFIG_HOME=~/.config
-export EDITOR='vim'
+export EDITOR='nvim'
 
 alias ls='ls -GF'
 
