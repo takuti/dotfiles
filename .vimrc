@@ -5,35 +5,39 @@ if &compatible
  set nocompatible
 endif
 
-set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/.cache/dein'))
-call dein#add('Shougo/dein.vim')
+if dein#load_state(expand('~/.cache/dein'))
+  call dein#begin(expand('~/.cache/dein'))
+  call dein#add('Shougo/dein.vim')
 
-call dein#add('tomasr/molokai', {'merged': 0})
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-jedi')
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('Shougo/vimshell.vim')
-call dein#add('itchyny/lightline.vim')
-call dein#add('thinca/vim-quickrun')
-call dein#add('godlygeek/tabular')
-call dein#add('tyru/open-browser.vim')
-call dein#add('kmnk/vim-unite-giti')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('tpope/vim-fugitive')
+  call dein#add('tomasr/molokai', {'merged': 0})
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('zchee/deoplete-jedi')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/vimshell.vim')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('godlygeek/tabular')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('kmnk/vim-unite-giti')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('tpope/vim-fugitive')
 
-" language specific
-call dein#add('rust-lang/rust.vim')
-call dein#add('JuliaLang/julia-vim')
-call dein#add('derekwyatt/vim-scala')
-call dein#add('plasticboy/vim-markdown')
-call dein#add('kannokanno/previm')
-call dein#add('andviro/flake8-vim')
-call dein#add('fatih/vim-go')
+  " language specific
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('JuliaLang/julia-vim')
+  call dein#add('derekwyatt/vim-scala')
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('kannokanno/previm')
+  call dein#add('andviro/flake8-vim')
+  call dein#add('fatih/vim-go')
 
-call dein#end()
+  call dein#end()
+  call dein#save_state()
+endif
+
 colorscheme molokai
 
 filetype plugin indent on
