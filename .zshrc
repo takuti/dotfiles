@@ -39,6 +39,7 @@ else
   export EDITOR='nvim'
 fi
 alias vim='nvim'
+alias vi='vim'
 export XDG_CONFIG_HOME=~/.config
 
 alias ls='ls -GF'
