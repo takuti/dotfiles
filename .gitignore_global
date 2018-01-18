@@ -3,3 +3,4 @@
 .envrc
 .ipynb_checkpoints
 __pycache__/
+.digdag
