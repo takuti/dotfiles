@@ -62,7 +62,7 @@ case ${OSTYPE} in
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
     # hadoop on homebrew related
-    export HADOOP_DIR=/usr/local/Cellar/hadoop/2.7.3
+    export HADOOP_DIR=/usr/local/Cellar/hadoop/$(hadoop version | head -n 1 | cut -d' ' -f 2)
     alias hstart=${HADOOP_DIR}/sbin/start-all.sh
     alias hstop=${HADOOP_DIR}/sbin/stop-all.sh
 
