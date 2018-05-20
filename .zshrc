@@ -69,6 +69,11 @@ case ${OSTYPE} in
     # for Octave (not aqua)
     export GNUTERM=x11
 
+    # link each Julia version to `julia-xxx` command
+    for julia_appname in $(ls /Applications | sed -n -E 's/(Julia-[0-9.]+)\.app.*/\1/p'); do
+      ln -s /Applications/${julia_appname}.app/Contents/Resources/julia/bin/julia /usr/local/bin/$(echo $julia_appname | tr '[:upper:]' '[:lower:]')
+    done
+
     ;;
 esac
 
