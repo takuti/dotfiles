@@ -5,11 +5,11 @@ if &compatible
  set nocompatible
 endif
 
-set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state(expand('~/.cache/dein'))
-  call dein#begin(expand('~/.cache/dein'))
-  call dein#add('Shougo/dein.vim')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  call dein#add('~/.cache/dein')
 
   call dein#add('tomasr/molokai', {'merged': 0})
   call dein#add('Shougo/deoplete.nvim')
