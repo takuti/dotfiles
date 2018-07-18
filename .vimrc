@@ -33,6 +33,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('kannokanno/previm')
   call dein#add('andviro/flake8-vim')
   call dein#add('fatih/vim-go')
+  call dein#add('b4b4r07/vim-sqlfmt')
 
   call dein#end()
   call dein#save_state()
@@ -118,6 +119,11 @@ let g:quickrun_config = {
 \   },
 \ }
 nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+let g:sqlfmt_auto = 0
+" pip install --upgrade sqlparse
+let g:sqlfmt_command = "sqlformat"
+let g:sqlfmt_options = "-s -r -k upper"
 
 let g:vim_markdown_folding_disabled = 1
 
