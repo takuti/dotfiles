@@ -1,9 +1,12 @@
 #!/bin/bash
 
 ## Create nvim directory
-mkdir -p "$HOME"/.config/nvim/dein
+mkdir -p "$HOME"/.config/nvim
+mkdir -p "$HOME"/.cache/dein
 
 ## Install dein.vim
-echo "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh)" | bash -s "$HOME"/.config/nvim/dein
+curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+sh ./installer.sh ~/.cache/dein
+rm installer.sh
 
-ln -sfnv "$DOTPATH"/.vimrc $HOME/.config/nvim/init.vim
+ln -sfnv "$DOTPATH"/.vimrc "$HOME"/.config/nvim/init.vim
