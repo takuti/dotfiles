@@ -47,6 +47,7 @@ autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
 setopt no_beep
+unsetopt nomatch
 
 # do `ls` when change directory
 function chpwd() { ls }
