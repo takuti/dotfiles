@@ -71,6 +71,8 @@ case ${OSTYPE} in
     for julia_appname in $(ls /Applications | sed -n -E 's/(Julia-[0-9.]+)\.app.*/\1/p'); do
       alias $(echo $julia_appname | tr '[:upper:]' '[:lower:]')=/Applications/${julia_appname}.app/Contents/Resources/julia/bin/julia
     done
+    # Use the latest version for `julia` command
+    alias julia=/Applications/${julia_appname}.app/Contents/Resources/julia/bin/julia
 
     ;;
 esac
