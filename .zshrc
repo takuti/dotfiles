@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/texlive/2018/bin/x86_64-darwin
+export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # embulk, digdag
 export PATH="$HOME/.embulk/bin:$HOME/bin:$PATH"
@@ -58,11 +58,6 @@ case ${OSTYPE} in
     export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
     eval "$(direnv hook zsh)"
     export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-    # hadoop on homebrew related
-    export HADOOP_DIR=/usr/local/Cellar/hadoop/$(hadoop version | head -n 1 | cut -d' ' -f 2)
-    alias hstart=${HADOOP_DIR}/sbin/start-all.sh
-    alias hstop=${HADOOP_DIR}/sbin/stop-all.sh
 
     # for Octave (not aqua)
     export GNUTERM=x11
