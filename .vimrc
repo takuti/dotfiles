@@ -31,7 +31,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('derekwyatt/vim-scala')
   call dein#add('plasticboy/vim-markdown')
   call dein#add('kannokanno/previm')
-  call dein#add('andviro/flake8-vim')
+  call dein#add('nvie/vim-flake8')
   call dein#add('fatih/vim-go')
   call dein#add('b4b4r07/vim-sqlfmt')
 
@@ -131,6 +131,10 @@ augroup PrevimSettings
   autocmd!
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
+
+let g:flake8_show_in_file = 1
+let g:flake8_show_in_gutter = 1
+autocmd BufWritePost *.py call flake8#Flake8()
 
 autocmd BufNewFile,BufRead *.{dig*} set filetype=yaml
 
