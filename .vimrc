@@ -14,14 +14,13 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tomasr/molokai', {'merged': 0})
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-jedi')
-  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/denite.nvim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/vimshell.vim')
   call dein#add('itchyny/lightline.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('godlygeek/tabular')
   call dein#add('tyru/open-browser.vim')
-  call dein#add('kmnk/vim-unite-giti')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
 
@@ -78,7 +77,6 @@ endfunction
 function! LightLineFilename()
   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
@@ -199,19 +197,5 @@ noremap ; :
 noremap : ;
 nnoremap j gj
 nnoremap k gk
-
-" unite.vim
-nnoremap [Unite] <Nop>
-nmap <Leader>u [Unite]
-nnoremap <silent> [Unite]re :<C-u>UniteResume<CR>
-nnoremap <silent> [Unite]f  :<C-u>Unite -buffer-name=Files file_rec/async:!<CR>
-nnoremap <silent> [Unite]s  :<C-u>Unite -buffer-name=Sources source<CR>
-nnoremap <silent> [Unite]g  :<C-u>Unite grep -buffer-name=Search<CR>
-nnoremap <silent> [Unite]gi :<C-u>Unite -buffer-name=Giti giti<CR>
-
-call unite#custom#profile('default', 'context', {
-\   'start_insert': 1,
-\   'prompt': '>',
-\})
 
 syntax enable
