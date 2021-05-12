@@ -22,9 +22,6 @@ export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/
 # embulk, digdag
 export PATH="$HOME/.embulk/bin:$HOME/bin:$PATH"
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 # You may need to manually set your language environment
@@ -109,3 +106,7 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# node
+eval "$(nodenv init -)"
+export PATH=$HOME/.nodenv/shims:$PATH
