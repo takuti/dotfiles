@@ -88,7 +88,7 @@ function gem(){
 # python
 export PYTHONSTARTUP=$HOME/.pythonrc
 
-export PATH=$HOME/.pyenv/sims:$PATH
+export PATH=$HOME/.pyenv/shims:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # added by travis gem
