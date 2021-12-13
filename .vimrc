@@ -33,6 +33,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('nvie/vim-flake8')
   call dein#add('fatih/vim-go')
   call dein#add('b4b4r07/vim-sqlfmt')
+  call dein#add('cespare/vim-toml')
 
   call dein#end()
   call dein#save_state()
