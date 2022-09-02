@@ -12,9 +12,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('tomasr/molokai', {'merged': 0})
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('zchee/deoplete-jedi')
-  call dein#add('Shougo/denite.nvim')
+  call dein#add('vim-denops/denops.vim')
+  call dein#add('Shougo/ddc.vim')
+  call dein#add('Shougo/ddu.vim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/vimshell.vim')
   call dein#add('itchyny/lightline.vim')
@@ -142,9 +142,35 @@ let mapleader = ' '
 nnoremap <Leader>vs  :VimShell<CR>
 nnoremap <Leader>vsp :VimShellPop<CR>
 
-" deoplete.vim requires python3
 let g:python3_host_prog = expand('$HOME') . '/.pyenv/shims/python'
-let g:deoplete#enable_at_startup = 1
+" You must set the default ui.
+" Note: ff ui
+" https://github.com/Shougo/ddu-ui-ff
+call ddu#custom#patch_global({
+    \ 'ui': 'ff',
+    \ })
+
+" You must set the default action.
+" Note: file kind
+" https://github.com/Shougo/ddu-kind-file
+call ddu#custom#patch_global({
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \   }
+    \ })
+
+" Specify matcher.
+" Note: matcher_substring filter
+" https://github.com/Shougo/ddu-filter-matcher_substring
+call ddu#custom#patch_global({
+    \   'sourceOptions': {
+    \     '_': {
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   }
+    \ })
 
 " ---------- appearance & setting
 set t_Co=256
