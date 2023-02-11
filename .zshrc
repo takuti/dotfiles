@@ -18,6 +18,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH=/usr/local/Cellar:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/opt/homebrew/bin:$PATH
 
 # embulk, digdag
 export PATH="$HOME/.embulk/bin:$HOME/bin:$PATH"
