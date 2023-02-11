@@ -1,47 +1,63 @@
-" ---------- plugin
-if 0 | endif
-
-if &compatible
- set nocompatible
+" dein.vim installation
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE . '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' . substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
 endif
 
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+set nocompatible
 
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+let s:dein_base = '~/.cache/dein/'
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
 
-  call dein#add('tomasr/molokai', {'merged': 0})
-  call dein#add('vim-denops/denops.vim')
-  call dein#add('Shougo/ddc.vim')
-  call dein#add('Shougo/ddu.vim')
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-  call dein#add('Shougo/vimshell.vim')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('godlygeek/tabular')
-  call dein#add('tyru/open-browser.vim')
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('tpope/vim-fugitive')
+execute 'set runtimepath+=' . s:dein_src
 
-  " language specific
-  call dein#add('rust-lang/rust.vim')
-  call dein#add('JuliaLang/julia-vim')
-  call dein#add('derekwyatt/vim-scala')
-  call dein#add('plasticboy/vim-markdown')
-  call dein#add('kannokanno/previm')
-  call dein#add('nvie/vim-flake8')
-  call dein#add('fatih/vim-go')
-  call dein#add('b4b4r07/vim-sqlfmt')
-  call dein#add('cespare/vim-toml')
+call dein#begin(s:dein_base)
 
-  call dein#end()
-  call dein#save_state()
+call dein#add(s:dein_src)
+
+call dein#add('tomasr/molokai', {'merged': 0})
+call dein#add('vim-denops/denops.vim')
+call dein#add('Shougo/ddc.vim')
+call dein#add('Shougo/ddu.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Shougo/vimshell.vim')
+call dein#add('itchyny/lightline.vim')
+call dein#add('thinca/vim-quickrun')
+call dein#add('godlygeek/tabular')
+call dein#add('tyru/open-browser.vim')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('tpope/vim-fugitive')
+
+" language specific
+call dein#add('rust-lang/rust.vim')
+call dein#add('JuliaLang/julia-vim')
+call dein#add('derekwyatt/vim-scala')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('kannokanno/previm')
+call dein#add('nvie/vim-flake8')
+call dein#add('fatih/vim-go')
+call dein#add('b4b4r07/vim-sqlfmt')
+call dein#add('cespare/vim-toml')
+
+call dein#end()
+
+filetype indent plugin on
+
+if has('syntax')
+  syntax on
+  colorscheme molokai
 endif
-
-colorscheme molokai
-
-filetype plugin indent on
 
 if dein#check_install()
   call dein#install()
