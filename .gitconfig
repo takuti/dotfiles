@@ -40,3 +40,5 @@
   root = ~/src
 [credential]
 	helper = osxkeychain
+[init]
+	defaultBranch = main
